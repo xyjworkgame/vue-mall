@@ -7,7 +7,27 @@
     <router-view/>
   </div>
 </template>
-
+<script>
+// import axios from 'axios'
+import jsonp from 'jsonp'
+export default {
+  name:'app',
+  data(){
+    return {
+      data:''
+    }
+  },
+  mounted () {
+    let url = "act/june2020?utm_source=imooc&utm_campaign=index_banner"
+    // axios.get().then(()=>{
+    //
+    // })
+    jsonp(url,(err,res)=>{
+      this.data = res
+    })
+  }
+}
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
