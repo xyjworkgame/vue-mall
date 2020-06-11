@@ -1,13 +1,13 @@
 <template>
 <div></div>
 </template>
+
 <script>
-
-
 export default {
-  name: 'app'
+  name: 'OrderList'
 }
 </script>
-<style>
+
+<style scoped>
 
 </style>
