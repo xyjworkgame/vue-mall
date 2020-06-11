@@ -40,3 +40,25 @@ yarn global add @vue/cli
 
 ##### c) nginx 服务器配置来实现
 > 前端修改，后台不动
+
+
+
+#### 3. storage封装
+> Cookie 、LocalSorate、SessionStorage三者
+
+##### a) 三者区别
+1. 存储大小：Cookie4K,Storage5M
+2. 有效期：Cookie有有效期，storage永久存储
+3. Cookie会发送到服务器端，存储在内存中，Storage只存在浏览器端
+4. 路径： Cookie 有路径限制，Storage只存储在域名下
+5. API：Cookie没有特定的API，Storage有对应的API
+
+##### b) 为什么封装
+1. 虽然本身有API，但是只是简单的key-value性阿是
+2. 只存储字符串，需要人工转换json对象
+3. 只能一次清空，不能单个清空
+
+#### 4. 接口错误拦截
+> 统一错误
+> 未登录统一拦截
+> 请求值，返回值统一处理
