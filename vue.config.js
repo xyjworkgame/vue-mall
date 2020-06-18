@@ -7,11 +7,11 @@ module.exports = {
     host:'localhost',
     port:8080,
     proxy:{
-      '/act':{
-        target: 'https://www.imooc.com',// 目标
+      '/api':{
+        target: 'https://mall-pre.springboot.cn',// 目标
         changeOrigin: true,
         pathRewrite:{
-          '/act':''
+          '/api':''
         }
       }
     }
