@@ -224,13 +224,11 @@ export default {
     getProductList(){
       this.axios.get('/products',{
         params:{
-          categoryId:'100012'
-          // pageSize:6
+          categoryId:'100012',
+          pageSize:6
         }
       }).then((res)=>{
-        if(res.list.length > 6){
           this.phoneList = res.list.slice(0,6)
-        }
       })
     },
     goToCart(){
@@ -310,6 +308,7 @@ export default {
                         }
 
                         .children {
+                            background-color: #ffffff;
                             position: absolute;
                             top: 112px;
                             left: 0;

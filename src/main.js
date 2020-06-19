@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import VueLazyload from 'vue-lazyload'
 
 /*{
   status:0,
@@ -27,7 +28,7 @@ axios.interceptors.response.use(function (response) {
 Vue.use(VueAxios,axios)
 // 生产环境提示
 Vue.config.productionTip = false
-
+Vue.use(VueLazyload)
 new Vue({
   router,
   render: h => h(App)
