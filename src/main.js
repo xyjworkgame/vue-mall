@@ -28,7 +28,9 @@ axios.interceptors.response.use(function (response) {
 Vue.use(VueAxios,axios)
 // 生产环境提示
 Vue.config.productionTip = false
-Vue.use(VueLazyload)
+Vue.use(VueLazyload,{
+  loading:'/imgs/loading-svg/loading-bars.svg'
+})
 new Vue({
   router,
   render: h => h(App)

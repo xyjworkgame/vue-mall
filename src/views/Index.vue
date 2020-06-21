@@ -57,6 +57,7 @@
             </div>
             <div class="banner">
                 <a href="/#/product/30">
+                    <!--路径需要单引号，去括起来-->
                     <img v-lazy="'/imgs/banner-1.png'" alt="">
                 </a>
             </div>
@@ -87,33 +88,33 @@
             </div>
         </div>
         <service-bar></service-bar>
-        <!--        <modal-->
-        <!--                title="提示"-->
-        <!--                sureText="查看购物车"-->
-        <!--                btnType="1"-->
-        <!--                modalType="middle"-->
-        <!--                v-bind:showModal="showModal"-->
-        <!--                v-on:submit="goToCart"-->
-        <!--                v-on:cancel="showModal=false"-->
-        <!--        >-->
-        <!--            <template v-slot:body>-->
-        <!--                <p>商品添加成功！</p>-->
-        <!--            </template>-->
-        <!--        </modal>-->
+                <modal
+                        title="提示"
+                        sureText="查看购物车"
+                        btnType="1"
+                        modalType="middle"
+                        v-bind:showModal="showModal"
+                        v-on:submit="goToCart"
+                        v-on:cancel="showModal=false"
+                >
+                    <template v-slot:body>
+                        <p>商品添加成功！</p>
+                    </template>
+                </modal>
     </div>
 </template>
 <script>
 import ServiceBar from './../components/ServiceBar'
 import {Swiper, SwiperSlide, directive} from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
-
+import Modal from '../components/Modal'
 export default {
   name: 'index',
   components: {
     Swiper,
     SwiperSlide,
-    ServiceBar
-    // Modal
+    ServiceBar,
+    Modal
   },
   directives: {
     swiper: directive

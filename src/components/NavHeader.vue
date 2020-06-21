@@ -122,7 +122,7 @@
                                     <a href="" target="_blank">
                                         <div></div>
                                         <div class="pro-img">
-                                            <img src="/imgs/nav-img/nav-3-1.jpg"
+                                            <img v-lazy="'/imgs/nav-img/nav-3-1.jpg'"
                                                  alt="">
                                         </div>
                                         <div class="pro-name">小米11</div>
