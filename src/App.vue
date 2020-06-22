@@ -7,7 +7,26 @@
 
 
 export default {
-  name: 'app'
+  name: 'app',
+  mounted () {
+    this.getUser();
+    this.getCartCount();
+  },
+  methods:{
+    getUser(){
+      this.axios.get('/user').then((res)=>{
+        // TODO 保存到vuex里面
+        this.$store.dispatch('saveUserName',res.username)
+      })
+    },
+    getCartCount(){
+      this.axios.get('/user').then((res)=>{
+        // TODO 获取购物车数据保存到vuex里面
+        this.$store.dispatch('saveCarCount',res)
+
+      })
+    }
+  }
 
 
 }
