@@ -9,19 +9,22 @@
 export default {
   name: 'app',
   mounted () {
+    if (this.$cookie.get('userId')){
+
     this.getUser();
     this.getCartCount();
+    }
   },
   methods:{
     getUser(){
-      this.axios.get('/user').then((res)=>{
-        // TODO 保存到vuex里面
+      this.axios.get('/user').then((res={})=>{
+        // 保存到vuex里面
         this.$store.dispatch('saveUserName',res.username)
       })
     },
     getCartCount(){
-      this.axios.get('/user').then((res)=>{
-        // TODO 获取购物车数据保存到vuex里面
+      this.axios.get('/user').then((res=0)=>{
+        // 获取购物车数据保存到vuex里面
         this.$store.dispatch('saveCarCount',res)
 
       })
