@@ -2,15 +2,15 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Index from '../views/Index'
-import Product from '../views/Product'
-import Detail from '../views/Detail'
-import Cart from '../views/Cart'
+// import Product from '../views/Product'
+// import Detail from '../views/Detail'
+// import Cart from '../views/Cart'
 import Order from '../views/Order'
 import OrderList from '../views/OrderList'
 import OrderConfirm from '../views/OrderConfirm'
 import OrderPay from '../views/OrderPay'
 import AliPay from '../views/AliPay'
-import Login from '../views/Login'
+// import Login from '../views/Login'
 Vue.use(VueRouter)
 
   const routes = [
@@ -27,23 +27,23 @@ Vue.use(VueRouter)
       {
         path: '/product/:id',
         name: 'product',
-        component: Product
+        component: resolve => require(['./views/Index.vue'],resolve),
       },
       {
         path: '/detail/:id',
         name: 'detail',
-        component: Detail
+        component: resolve => require(['./views/Detail.vue'],resolve),
       }]
   },
     {
       path: '/login',
       name: 'login',
-      component: Login
+      component: ()=> import('./views/Login.vue')
     },
     {
       path: '/cart',
       name: 'cart',
-      component: Cart
+      component: ()=> import('./views/Cart.vue')
     },
     {
       path: '/order',
