@@ -37,7 +37,7 @@
     "sass-resources-loader": "^2.0.3",
     "scss": "^0.2.4",
     "style-loader": "^1.2.1",
-    "swiper": "^5.4.5",
+    "swiper": "^6.5.1",
     "vue-awesome-swiper": "^4.1.1",
     "vue-axios": "^2.1.5",
     "vue-cookie": "^1.1.4",
